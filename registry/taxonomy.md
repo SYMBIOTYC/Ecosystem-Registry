@@ -37,3 +37,9 @@ The seed CSV uses the first nine fields; timestamps and dependencies are tracked
 - Do not claim a service is in production from repository existence, README text, CI success or a configured homepage alone.
 - For cloud workloads, distinguish ephemeral GitHub-hosted CI from persistent compute, VPS, workers and deployed endpoints.
 - Keep private implementation and public wrappers as separate trust boundaries.
+## CSV schema integrity
+
+- `registry/records.csv` has exactly 13 columns in the header; every data row must contain exactly 13 fields in the same order.
+- Evidence-source labels and supplemental provenance notes belong in `evidence_note` unless a versioned schema change explicitly adds a new column and migrates every row.
+- Before committing CSV changes, validate the field count for every row, lifecycle/evidence enums, required IDs/names/types, and uniqueness of stable IDs.
+- Do not infer a lifecycle state from evidence strength: `lifecycle_status` and `evidence_level` are independent fields.
