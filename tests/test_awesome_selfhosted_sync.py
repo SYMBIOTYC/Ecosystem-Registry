@@ -77,16 +77,18 @@ archived: false
         with self.assertRaises(CatalogError):
             parse_catalog_archive(archive, REVISION)
 
-    def test_rejects_non_https_external_urls(self):
+    def test_omits_non_https_external_urls_and_records_warning(self):
         archive = make_archive({
-            "software/bad.yml": """
-name: Bad
+            "software/legacy.yml": """
+name: Legacy
 website_url: http://example.com
-source_code_url: https://github.com/example/bad
+source_code_url: https://github.com/example/legacy
 """
         })
-        with self.assertRaises(CatalogError):
-            parse_catalog_archive(archive, REVISION)
+        records = parse_catalog_archive(archive, REVISION)
+        self.assertIsNone(records[0]["website_url"])
+        self.assertEqual(records[0]["source_code_url"], "https://github.com/example/legacy")
+        self.assertIn("website_url_omitted_non_https_or_invalid", records[0]["normalization_warnings"])
 
     def test_serialization_is_deterministic_and_attributed(self):
         archive = make_archive({"software/example.yml": "name: Example\n"})
