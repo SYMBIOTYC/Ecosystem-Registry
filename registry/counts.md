@@ -6,10 +6,10 @@
 | `SYMBIOTYC` | 16 |
 | `SpineAnimator` | 18 |
 | `vladleopold` | 44 |
-| `ukraine-devs` | 1 |
-| **Total repository records** | **79** |
+| `ukraine-devs` | 2 |
+| **Total repository records** | **80** |
 
-These are repository metadata records, not 79 distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
+These are repository metadata records, not 80 distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
 
 ## Seed asset records by type
 | Type | Count |
@@ -28,7 +28,7 @@ These are repository metadata records, not 79 distinct products or production se
 | Integration | 2 |
 
 ## Important distinctions
-- Repository count: 79.
+- Repository count: 80.
 - Asset-record count: 49.
 - Confirmed production service count: **0 verified in this snapshot**.
 - Product count is a separate classification and should not be inferred from the repository count.
