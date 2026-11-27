@@ -1,15 +1,16 @@
-# Snapshot counts — 2026-11-27
+# Snapshot counts — 2026-11-28
 
 ## GitHub repository inventory
 | Owner | Repositories visible |
 |---|---:|
-| `SYMBIOTYC` | 16 |
+| `SYMBIOTYC` | 18 |
 | `SpineAnimator` | 18 |
 | `vladleopold` | 44 |
 | `ukraine-devs` | 2 |
-| **Total repository records** | **80** |
+| `awesome-selfhosted` | 2 |
+| **Total repository records** | **84** |
 
-These are repository metadata records, not 80 distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
+The two `awesome-selfhosted` repositories are external partner catalog sources, not SYMBIOTYC-owned repositories. These are repository metadata records, not distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
 
 ## Asset records by type
 | Type | Count |
@@ -17,20 +18,23 @@ These are repository metadata records, not 80 distinct products or production se
 | Project | 10 |
 | Product | 9 |
 | Website | 5 |
-| Tool | 4 |
+| Tool | 10 |
 | Infrastructure | 4 |
 | Organization | 3 |
 | Person / Team | 3 |
 | Application | 6 |
 | Interface | 2 |
 | Technology | 11 |
-| Service | 3 |
-| Integration | 2 |
+| Service | 5 |
+| Integration | 3 |
+| **Total** | **71** |
 
 ## Important distinctions
-- Repository count: 80.
-- Asset-record count: 62.
+- Repository count: 84.
+- Asset-record count: 71.
 - Confirmed production service count: **0 verified in this snapshot**.
-- Three service records are documented development/local components; none is independently verified as a production service.
+- Five Service records describe development/local or workflow components; none is independently verified as a production service.
+- Six new Tool records are upstream catalog candidates only. Their deployments and callable adapters are not verified.
+- The partner catalog is discovery-only. Catalog membership does not authorize installation, network access, credentials, or invocation.
 - Product count is a separate classification and should not be inferred from the repository count.
 - A configured homepage or successful CI workflow is not proof of a live production service.
