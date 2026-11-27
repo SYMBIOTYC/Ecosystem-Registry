@@ -3,7 +3,7 @@
 Canonical inventory for the SYMBIOTYC technology ecosystem and explicitly related projects.
 
 **Snapshot:** 2026-11-27  
-**Asset records:** 43  
+**Asset records:** 49  
 **Repository metadata records:** 79
 
 ## Start here
