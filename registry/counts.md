@@ -3,12 +3,12 @@
 ## GitHub repository inventory
 | Owner | Repositories visible |
 |---|---:|
-| `SYMBIOTYC` | 16 |
+| `SYMBIOTYC` | 18 |
 | `SpineAnimator` | 18 |
 | `vladleopold` | 44 |
 | `ukraine-devs` | 2 |
 | `awesome-selfhosted` | 2 |
-| **Total repository records** | **82** |
+| **Total repository records** | **84** |
 
 The two `awesome-selfhosted` repositories are external partner catalog sources, not SYMBIOTYC-owned repositories. These are repository metadata records, not distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
 
@@ -25,15 +25,15 @@ The two `awesome-selfhosted` repositories are external partner catalog sources, 
 | Application | 6 |
 | Interface | 2 |
 | Technology | 11 |
-| Service | 3 |
+| Service | 5 |
 | Integration | 3 |
-| **Total** | **69** |
+| **Total** | **71** |
 
 ## Important distinctions
-- Repository count: 82.
-- Asset-record count: 69.
+- Repository count: 84.
+- Asset-record count: 71.
 - Confirmed production service count: **0 verified in this snapshot**.
-- Three service records are documented development/local components; none is independently verified as a production service.
+- Five Service records describe development/local or workflow components; none is independently verified as a production service.
 - Six new Tool records are upstream catalog candidates only. Their deployments and callable adapters are not verified.
 - The partner catalog is discovery-only. Catalog membership does not authorize installation, network access, credentials, or invocation.
 - Product count is a separate classification and should not be inferred from the repository count.
