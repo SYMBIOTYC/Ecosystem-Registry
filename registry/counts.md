@@ -9,7 +9,7 @@
 | `ukraine-devs` | 1 |
 | **Total repository records** | **79** |
 
-These are repository metadata records, not 78 distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
+These are repository metadata records, not 79 distinct products or production services. The vladleopold inventory is owner-scoped and is not automatically attributed to SYMBIOTYC. Private repositories are included only as metadata; no private source is reproduced.
 
 ## Seed asset records by type
 | Type | Count |
