@@ -51,7 +51,7 @@ The workflow uses a repository-scoped GitHub Actions token only for creating its
 - Symlinks and non-regular software entries are rejected.
 - Archive, member count, unpacked data, per-record size, and text length are bounded.
 - YAML is parsed with `safe_load`; unknown upstream fields are ignored.
-- Website/source URLs must be absolute HTTPS URLs without user information.
+- Website/source URLs must be absolute HTTPS URLs without user information. Unsafe or legacy non-HTTPS URL values are omitted and recorded in `normalization_warnings`; they do not block unrelated catalog records.
 - Duplicate normalized IDs, malformed records, invalid types, and non-immutable revisions fail the import.
 - The source catalog is CC-BY-SA-3.0. Snapshot metadata records attribution and license URL; adaptations of the catalog data must retain attribution and comply with ShareAlike.
 - Individual software licenses are separate from the catalog-data license and must be reviewed independently.
