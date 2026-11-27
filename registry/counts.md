@@ -23,11 +23,13 @@ These are repository metadata records, not 79 distinct products or production se
 | Person / Team | 3 |
 | Application | 3 |
 | Interface | 2 |
+| Technology | 5 |
+| Service | 1 |
 | Integration | 2 |
 
 ## Important distinctions
 - Repository count: 79.
-- Asset-record count: 43.
+- Asset-record count: 49.
 - Confirmed production service count: **0 verified in this snapshot**.
 - Product count is a separate classification and should not be inferred from the repository count.
 - A configured homepage or successful CI workflow is not proof of a live production service.
