@@ -128,12 +128,18 @@ def _normalize_record(filename: str, raw: object, revision: str) -> dict:
         raise CatalogError(f"{filename}: current_release must be a mapping")
     release_tag = _text(release.get("tag"), "current_release.tag") if release else None
 
+    try:
+        website_url = _https_url(raw.get("website_url"), "website_url")
+        source_code_url = _https_url(raw.get("source_code_url"), "source_code_url")
+    except CatalogError as exc:
+        raise CatalogError(f"{filename}: {exc}") from exc
+
     return {
         "catalog_id": f"awesome-selfhosted:{slug}",
         "name": name,
         "description": _text(raw.get("description"), "description"),
-        "website_url": _https_url(raw.get("website_url"), "website_url"),
-        "source_code_url": _https_url(raw.get("source_code_url"), "source_code_url"),
+        "website_url": website_url,
+        "source_code_url": source_code_url,
         "licenses": _string_list(raw.get("licenses"), "licenses"),
         "platforms": _string_list(raw.get("platforms"), "platforms"),
         "tags": _string_list(raw.get("tags"), "tags"),
