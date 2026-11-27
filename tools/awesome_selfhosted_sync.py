@@ -91,11 +91,14 @@ def _https_url(value, field: str) -> str | None:
     value = _text(value, field)
     if value is None:
         return None
-    parsed = urlsplit(value)
+    try:
+        parsed = urlsplit(value)
+    except ValueError:
+        return None
     if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
-        raise CatalogError(f"{field} must be an absolute HTTPS URL without user information")
+        return None
     if any(ord(char) < 32 for char in value):
-        raise CatalogError(f"{field} contains control characters")
+        return None
     return value
 
 
@@ -128,11 +131,15 @@ def _normalize_record(filename: str, raw: object, revision: str) -> dict:
         raise CatalogError(f"{filename}: current_release must be a mapping")
     release_tag = _text(release.get("tag"), "current_release.tag") if release else None
 
-    try:
-        website_url = _https_url(raw.get("website_url"), "website_url")
-        source_code_url = _https_url(raw.get("source_code_url"), "source_code_url")
-    except CatalogError as exc:
-        raise CatalogError(f"{filename}: {exc}") from exc
+    website_raw = _text(raw.get("website_url"), "website_url")
+    source_code_raw = _text(raw.get("source_code_url"), "source_code_url")
+    website_url = _https_url(website_raw, "website_url")
+    source_code_url = _https_url(source_code_raw, "source_code_url")
+    warnings = []
+    if website_raw is not None and website_url is None:
+        warnings.append("website_url_omitted_non_https_or_invalid")
+    if source_code_raw is not None and source_code_url is None:
+        warnings.append("source_code_url_omitted_non_https_or_invalid")
 
     return {
         "catalog_id": f"awesome-selfhosted:{slug}",
@@ -147,6 +154,7 @@ def _normalize_record(filename: str, raw: object, revision: str) -> dict:
         "updated_at": _text(raw.get("updated_at"), "updated_at"),
         "current_release_tag": release_tag,
         "source_file": filename,
+        "normalization_warnings": warnings,
         "source_revision": revision,
         "source_repository": DATA_REPOSITORY,
         "catalog_license": DATA_LICENSE,
