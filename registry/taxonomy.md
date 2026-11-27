@@ -31,6 +31,16 @@ The seed CSV uses the first nine fields; timestamps and dependencies are tracked
 7. Technologies and third-party dependencies are not counted as products.
 8. People and teams are counted separately from software assets; do not infer personal roles.
 
+## Tool and partner catalog governance
+
+- The canonical Tool and Skill Registry is `registry/tools.yaml`; it is separate from the infrastructure and Worker registries.
+- Catalog sources are read-only discovery inputs. Pin each import to an immutable commit SHA and preserve attribution and license provenance.
+- Catalog records enter as `discovered` and `not_authorized`; catalog inclusion never grants installation, credentials, network access, or invocation permission.
+- A Tool record, its typed Invocation records, and its Skills are separate entities. A Skill cannot widen a Tool's scopes.
+- Only a deployment-specific Tool and Invocation state of `verified`, backed by positive and negative tests, may be callable.
+- State-changing operations require explicit approval, durable idempotency, and reconciliation for unknown outcomes.
+- Do not infer an upstream software license from the catalog's CC-BY-SA-3.0 data license; review each software license independently.
+
 ## Governance
 - Keep IDs stable; never recycle them.
 - Every count must state its scope and snapshot date.
@@ -43,3 +53,4 @@ The seed CSV uses the first nine fields; timestamps and dependencies are tracked
 - Evidence-source labels and supplemental provenance notes belong in `evidence_note` unless a versioned schema change explicitly adds a new column and migrates every row.
 - Before committing CSV changes, validate the field count for every row, lifecycle/evidence enums, required IDs/names/types, and uniqueness of stable IDs.
 - Do not infer a lifecycle state from evidence strength: `lifecycle_status` and `evidence_level` are independent fields.
+- Validate imported CSV row widths, enum values, stable IDs, and record references before updating the canonical snapshot.
