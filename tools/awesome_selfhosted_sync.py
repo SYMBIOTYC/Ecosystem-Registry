@@ -216,8 +216,8 @@ def serialize_catalog(records: list[dict], revision: str) -> str:
         "discovery_only": True,
         "record_count": len(records),
     }
-    lines = [json.dumps(metadata, ensure_ascii=False, sort_keys=True)]
-    lines.extend(json.dumps(item, ensure_ascii=False, sort_keys=True) for item in records)
+    lines = [json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(",", ":"))]
+    lines.extend(json.dumps(item, ensure_ascii=False, sort_keys=True, separators=(",", ":")) for item in records)
     return "\n".join(lines) + "\n"
 
 
