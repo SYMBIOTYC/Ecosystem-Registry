@@ -67,7 +67,7 @@ archived: false
     def test_rejects_duplicate_stable_ids(self):
         archive = make_archive({
             "software/search.yml": "name: Search\n",
-            "software/search-copy.yml": "name: Search copy\n",
+            "software/Search.yml": "name: Search copy\n",
         })
         with self.assertRaises(CatalogError):
             parse_catalog_archive(archive, REVISION)
