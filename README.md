@@ -3,8 +3,8 @@
 Canonical inventory for the SYMBIOTYC technology ecosystem and explicitly related projects.
 
 **Snapshot:** 2026-11-28  
-**Asset records:** 69  
-**Repository metadata records:** 82
+**Asset records:** 71  
+**Repository metadata records:** 84
 
 ## Start here
 - [Asset records](registry/records.csv)
