@@ -13,7 +13,7 @@ class CanonicalRegistryIntegrityTests(unittest.TestCase):
     def test_asset_csv_has_stable_unique_ids_and_thirteen_columns(self):
         with (ROOT / "registry" / "records.csv").open(encoding="utf-8", newline="") as stream:
             rows = list(csv.DictReader(stream))
-        self.assertEqual(len(rows), 69)
+        self.assertEqual(len(rows), 71)
         self.assertTrue(all(len(row) == 13 for row in rows))
         ids = [row["id"] for row in rows]
         self.assertEqual(len(ids), len(set(ids)))
@@ -33,7 +33,7 @@ class CanonicalRegistryIntegrityTests(unittest.TestCase):
         ]:
             self.assertEqual(rows[tool_id]["type"], "Tool")
             self.assertEqual(rows[tool_id]["parent_id"], "CATALOG-AWESOME-SELFHOSTED")
-            self.assertIn("not verified", rows[tool_id]["evidence_note"].lower())
+            self.assertIn("contract_only", rows[tool_id]["evidence_note"].lower())
 
     def test_tool_registry_references_resolve_and_remain_non_callable(self):
         registry = yaml.safe_load((ROOT / "registry" / "tools.yaml").read_text(encoding="utf-8"))
@@ -67,8 +67,8 @@ class CanonicalRegistryIntegrityTests(unittest.TestCase):
 
     def test_snapshot_counts_match_asset_inventory(self):
         counts = (ROOT / "registry" / "counts.md").read_text(encoding="utf-8")
-        self.assertIn("**Total repository records** | **82**", counts)
-        self.assertIn("**Total** | **69**", counts)
+        self.assertIn("**Total repository records** | **84**", counts)
+        self.assertIn("**Total** | **71**", counts)
 
 
 if __name__ == "__main__":
