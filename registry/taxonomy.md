@@ -4,7 +4,7 @@
 Organization, Product, Project, Service, Website, Tool, Technology, Infrastructure, Integration, Application, Interface, Person / Team.
 
 ## Required fields
-`id,name,type,parent_id,description,evidence_url,lifecycle_status,evidence_level,evidence_note,last_verified_utc`.
+`id,name,type,parent_id,description,owner,repository,evidence_url,lifecycle_status,evidence_level,evidence_note,dependencies,last_verified_utc`.
 
 The seed CSV uses the first nine fields; timestamps and dependencies are tracked in the repository inventory and will be normalized in the next schema revision.
 
