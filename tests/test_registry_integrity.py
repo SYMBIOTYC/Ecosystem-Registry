@@ -79,7 +79,7 @@ class CanonicalRegistryIntegrityTests(unittest.TestCase):
     def test_snapshot_counts_match_asset_inventory(self):
         counts = (ROOT / "registry" / "counts.md").read_text(encoding="utf-8")
         self.assertIn("**Total repository records** | **84**", counts)
-        self.assertIn("**Total** | **71**", counts)
+        self.assertIn("**Total** | **72**", counts)
 
 
 if __name__ == "__main__":
