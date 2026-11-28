@@ -44,7 +44,7 @@ class CanonicalRegistryIntegrityTests(unittest.TestCase):
         self.assertEqual(registry["catalog_sources"][0]["data_revision"], "11bb4605f128bdf6f759bdbcb4eebb1876349f14")
         invocation_ids = set()
         for tool in tools.values():
-            if tool["id"] == "tool.symbiotyc_group":
+            if tool["id"] == "tool.symbiotyc-group":
                 self.assertEqual(tool["status"], "configured")
                 self.assertEqual(tool["deployment_status"], "partially_deployed_unverified")
                 for invocation in tool["invocations"]:
