@@ -31,7 +31,7 @@ The two `awesome-selfhosted` repositories are external partner catalog sources, 
 
 ## Important distinctions
 - Repository count: 84.
-- Asset-record count: 71.
+- Asset-record count: 72.
 - Confirmed production service count: **0 verified in this snapshot**.
 - Five Service records describe development/local or workflow components; none is independently verified as a production service.
 - Six external Tool records are upstream catalog candidates only. One first-party GROUP Tool is partially deployed: three read-only invocations are configured, while approval endpoints are source-only and the authenticated MCP round-trip is not yet verified.
