@@ -224,7 +224,7 @@ tools:
         status: contract_only
     skills: ["skill.software-delivery"]
 
-  - id: tool.symbiotyc_group
+  - id: tool.symbiotyc-group
     name: SYMBIOTYC GROUP Control Plane
     category: compute_control_plane
     source_code: "https://github.com/SYMBIOTYC/GROUP"
